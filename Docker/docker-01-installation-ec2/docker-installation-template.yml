@@ -1,0 +1,75 @@
+
+AWSTemplateFormatVersion: "2010-09-09"
+
+Description: >
+  Creates an Amazon Linux 2023 EC2 instance with Docker installed.
+  SSH access is restricted to a configurable trusted CIDR range.
+
+Parameters:
+  KeyPairName:
+    Description: Name of an existing EC2 key pair in this AWS region.
+    Type: AWS::EC2::KeyPair::KeyName
+    ConstraintDescription: Must be the name of an existing EC2 key pair.
+
+  AllowedSSHCidr:
+    Description: >
+      Trusted public IP range allowed to connect via SSH,
+      for example 203.0.113.10/32. Replace with your own IP range.
+    Type: String
+    MinLength: 9
+    MaxLength: 18
+    Default: 203.0.113.10/32
+    AllowedPattern: ^(\d{1,3}\.){3}\d{1,3}/\d{1,2}$
+    ConstraintDescription: Enter an IPv4 CIDR range such as 203.0.113.10/32.
+
+  InstanceType:
+    Description: EC2 instance type for this learning exercise.
+    Type: String
+    Default: t3.micro
+    AllowedValues:
+      - t2.micro
+      - t3.micro
+
+Resources:
+  DockerMachineSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Allow SSH from a trusted IP range
+      SecurityGroupIngress:
+        - Description: SSH from trusted IP range
+          IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: !Ref AllowedSSHCidr
+      Tags:
+        - Key: Name
+          Value: Docker-Learning-SecurityGroup
+
+  DockerMachine:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: !Sub "{{resolve:ssm:/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-x86_64}}"
+      InstanceType: !Ref InstanceType
+      KeyName: !Ref KeyPairName
+      SecurityGroupIds:
+        - !GetAtt DockerMachineSecurityGroup.GroupId
+      Tags:
+        - Key: Name
+          Value: !Sub "Docker-Learning-${AWS::StackName}"
+      UserData:
+        Fn::Base64: |
+          #!/bin/bash
+          set -e
+          dnf update -y
+          dnf install -y docker
+          systemctl enable --now docker
+          usermod -aG docker ec2-user
+
+Outputs:
+  InstancePublicDNS:
+    Description: Public DNS name of the Docker EC2 instance.
+    Value: !GetAtt DockerMachine.PublicDnsName
+
+  InstancePublicIP:
+    Description: Public IP address of the Docker EC2 instance.
+    Value: !GetAtt DockerMachine.PublicIp

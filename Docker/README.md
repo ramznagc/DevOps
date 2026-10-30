@@ -1,86 +1,110 @@
-# Docker — Hands-on Labs 🐳
+# Docker
 
-Welcome to the Docker section of my DevOps Learning Portfolio!
+## Overview
 
-This directory contains hands-on exercises, configuration files, and practical examples for learning Docker, containerization, and infrastructure automation.
+Docker is a platform that allows developers to build, package, and run applications in containers. Containers provide a consistent environment for applications and help simplify deployment across different systems.
 
-## 📚 Lessons
+This section contains hands-on Docker lessons covering installation, container management, data persistence, and networking.
 
-### Docker-01: Installing Docker on AWS EC2
+## Learning Path
 
-Learn how to install and configure Docker on an Amazon Linux 2023 EC2 instance.
+The lessons are organized to progress from Docker fundamentals to more advanced concepts.
 
-**Topics covered:**
-- Launching an EC2 instance and connecting through SSH
-- Installing Docker with `dnf`
-- Starting and enabling the Docker service
-- Configuring Docker access for `ec2-user`
-- Verifying the Docker installation
-- Provisioning a Docker-ready EC2 instance using Terraform or AWS CloudFormation
+### Lesson 01 – Docker Installation on EC2
 
-📂 [Open Docker-01: Installation on EC2](./docker-01-installation-ec2/README.md)
+Learn how to install Docker on an Amazon EC2 Linux instance and prepare the environment for working with containers.
 
-### Docker-02: Docker Container Basic Operations
+Topics:
+- Docker installation
+- Docker service management
+- Basic Docker configuration
+- Running Docker on an EC2 instance
 
-Learn how to manage Docker containers throughout their lifecycle.
+[Open Lesson 01 – Docker Installation on EC2](docker-01-installation-ec2/README.md)
 
-**Topics covered:**
-- Exploring Docker command help
-- Running interactive Ubuntu containers
-- Listing running and stopped containers
-- Understanding container IDs, names, and statuses
+### Lesson 02 – Docker Container Basic Operations
+
+Learn the fundamental commands for managing Docker containers and images.
+
+Topics:
+- Running containers
+- Listing containers
 - Starting and stopping containers
-- Executing commands inside running containers
-- Inspecting container configuration
-- Removing containers safely
+- Removing containers
+- Working with Docker images
+- Executing commands inside containers
 
-📂 [Open Docker-02: Container Basic Operations](./docker-02-container-basic-operations/README.md)
+[Open Lesson 02 – Docker Container Basic Operations](docker-02-container-basic-operations/README.md)
 
-## 🛠️ Technologies
+### Lesson 03 – Handling Docker Volumes
 
-- Docker
-- AWS EC2
-- Amazon Linux 2023
-- Terraform
-- AWS CloudFormation
-- Linux
-- Git and GitHub
+Learn how Docker volumes provide persistent storage and allow data to be shared between containers.
 
-## 🔐 Security Best Practices
+Topics:
+- Data persistence
+- Creating and inspecting named volumes
+- Sharing volumes between containers
+- Read-only volume mounts
+- Volume initialization behavior
+- Bind mounts
+- Anonymous volumes
 
-- Restrict SSH access to trusted IP addresses instead of exposing port 22 to the entire internet.
-- Open only the network ports required by your application.
-- Never commit private keys, AWS credentials, access tokens, or other secrets.
-- Review infrastructure configuration before deploying AWS resources.
-- Use Docker volumes when data must persist independently of a container's lifecycle.
-- Remove only the containers and resources created for your own lab.
+[Open Lesson 03 – Handling Docker Volumes](docker-03-handling-volumes/README.md)
 
-## 🎯 Learning Goals
+### Lesson 04 – Docker Networking
 
-- Understand Docker and containerization fundamentals.
-- Practice installing and managing Docker.
-- Learn the lifecycle of Docker containers.
-- Build practical Linux and DevOps skills.
-- Explore Infrastructure as Code using Terraform and CloudFormation.
-- Maintain a clear, organized, version-controlled learning portfolio.
+Learn how Docker containers communicate with each other and external networks.
 
-## 📁 Repository Structure
+Topics:
+- Listing and inspecting Docker networks
+- Default bridge network
+- User-defined bridge networks
+- Container-to-container communication
+- Container name resolution
+- Connecting containers to multiple networks
+- Port publishing
+- Host networking
+- None networking
+
+[Open Lesson 04 – Docker Networking](docker-04-networking/README.md)
+
+---
+
+## Repository Structure
 
 ```text
 Docker/
+│
 ├── README.md
+│
 ├── docker-01-installation-ec2/
 │   ├── README.md
 │   ├── ec2-docker.tf
 │   └── docker-installation-template.yml
-└── docker-02-container-basic-operations/
+│
+├── docker-02-container-basic-operations/
+│   └── README.md
+│
+├── docker-03-handling-volumes/
+│   ├── README.md
+│   └── images/
+│       ├── same-vol-with-diff-con.png
+│       ├── situation-1-and-2.png
+│       ├── situation-3.png
+│       └── situation-4.png
+│
+└── docker-04-networking/
     └── README.md
 ```
 
-## 🧹 Lab Cleanup
+## Goals
 
-Review the resources created during each lab and remove only those that are no longer needed. AWS infrastructure deployment is optional for these documentation files; committing them to GitHub does not create AWS resources.
+By completing these lessons, you will gain practical experience with:
 
----
+- Installing and configuring Docker
+- Managing Docker images and containers
+- Persisting application data with Docker volumes
+- Sharing data between containers
+- Configuring Docker networks
+- Managing communication between containerized applications
 
-*This section is a work in progress. More Docker labs will be added as I continue learning.*

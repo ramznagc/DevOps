@@ -209,3 +209,4 @@ By default, `docker compose down` removes the containers and the Compose network
 ## Project Status
 
 Completed as a hands-on Docker Compose learning exercise and included in my DevOps portfolio.
+This project demonstrates multi-container application orchestration using Docker Compose, Flask, and Redis.

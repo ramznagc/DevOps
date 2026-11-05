@@ -18,6 +18,11 @@ Topics covered:
 - Modules and resource import
 - Publishing Terraform modules and using workspaces
 
+### Docker
+Containerization fundamentals, Docker image operations, and multi-container application setup with Docker Compose.
+
+📂 **[Explore Docker projects](./Docker/)**
+
 ## 🎯 Goals
 
 - Build practical DevOps skills through hands-on projects.
@@ -28,6 +33,7 @@ Topics covered:
 ## 🛠️ Technologies
 
 - Terraform
+- Docker and Docker Compose
 - Git and GitHub
 
 More tools and projects will be added as I continue learning.

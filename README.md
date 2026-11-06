@@ -23,6 +23,9 @@ Containerization fundamentals, Docker image operations, and multi-container appl
 
 📂 **[Explore Docker projects](./Docker/)**
 
+### Git & GitHub
+Version control fundamentals, repository organization, and tracking project changes with commits and pushes.
+
 ## 🎯 Goals
 
 - Build practical DevOps skills through hands-on projects.

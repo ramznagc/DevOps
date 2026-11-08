@@ -26,6 +26,12 @@ Containerization fundamentals, Docker image operations, and multi-container appl
 ### Git & GitHub
 Version control fundamentals, repository organization, and tracking project changes with commits and pushes.
 
+## 🧭 Learning Approach
+
+- Practice concepts through hands-on labs.
+- Keep project instructions and configuration examples documented.
+- Make changes in small, trackable steps.
+
 ## 🎯 Goals
 
 - Build practical DevOps skills through hands-on projects.

@@ -26,7 +26,7 @@ Containerization fundamentals, Docker image operations, and multi-container appl
 ### Kubernetes
 Hands-on Kubernetes cluster installation on AWS EC2 using kubeadm, containerd, Flannel, and an Nginx deployment.
 
-📂 **[Explore Kubernetes 01](./Kubernetes/Kubernetes-01/)**
+📂 **[Explore Kubernetes 01](./Kubernetes/kubernetes-01-installation-ec2/)**
 
 ### Git & GitHub
 Version control fundamentals, repository organization, and tracking project changes with commits and pushes.

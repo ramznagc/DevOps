@@ -23,6 +23,11 @@ Containerization fundamentals, Docker image operations, and multi-container appl
 
 📂 **[Explore Docker projects](./Docker/)**
 
+### Kubernetes
+Hands-on Kubernetes cluster installation on AWS EC2 using kubeadm, containerd, Flannel, and an Nginx deployment.
+
+📂 **[Explore Kubernetes 01](./Kubernetes/Kubernetes-01/)**
+
 ### Git & GitHub
 Version control fundamentals, repository organization, and tracking project changes with commits and pushes.
 
@@ -43,6 +48,7 @@ Version control fundamentals, repository organization, and tracking project chan
 
 - Terraform
 - Docker and Docker Compose
+- Kubernetes, kubeadm, containerd, and Flannel
 - Git and GitHub
 
 More tools and projects will be added as I continue learning.

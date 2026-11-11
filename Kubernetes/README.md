@@ -12,4 +12,7 @@ Hands-on Kubernetes lessons and practical labs.
 
 - [kubernetes-03-networking-and-service-discovery](./kubernetes-03-networking-and-service-discovery/) — Services, ClusterIP, NodePort, DNS, endpoints, and cross-namespace service discovery.
 
+
+- [kubernetes-04-volumes-and-persistent-storage](./kubernetes-04-volumes-and-persistent-storage/) — PersistentVolumes, PersistentVolumeClaims, emptyDir, StorageClasses, and dynamic provisioning.
+
 More Kubernetes lessons will be added here as the learning journey continues.

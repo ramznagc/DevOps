@@ -1,0 +1,10 @@
+# DELIBERATELY INVALID: ssh-auth expects the "ssh-privatekey" data key.
+# This placeholder is not a real private key.
+apiVersion: v1
+kind: Secret
+metadata:
+  name: bookstore-git-ssh-broken
+  namespace: secret-demo
+type: kubernetes.io/ssh-auth
+stringData:
+  id_rsa: "DELIBERATELY_INVALID_PLACEHOLDER_NOT_A_PRIVATE_KEY"

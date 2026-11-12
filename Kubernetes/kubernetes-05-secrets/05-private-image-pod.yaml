@@ -1,0 +1,13 @@
+# Demonstrates imagePullSecrets. The registry and image are fictional,
+# so the Pod is expected to fail image pulling unless you replace them.
+apiVersion: v1
+kind: Pod
+metadata:
+  name: bookstore-api-private
+  namespace: secret-demo
+spec:
+  imagePullSecrets:
+    - name: bookstore-regcred
+  containers:
+    - name: api
+      image: registry.bookstore.example/bookstore-api:1.0

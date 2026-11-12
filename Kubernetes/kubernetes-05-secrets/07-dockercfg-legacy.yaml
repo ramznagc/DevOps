@@ -1,0 +1,10 @@
+# LEGACY Docker config format. Prefer kubernetes.io/dockerconfigjson for new workloads.
+# Demo-only credentials; never put real registry credentials in source control.
+apiVersion: v1
+kind: Secret
+metadata:
+  name: bookstore-regcred-legacy
+  namespace: secret-demo
+type: kubernetes.io/dockercfg
+stringData:
+  .dockercfg: '{"registry.bookstore.example":{"username":"ci-bot","password":"DEMO_ONLY_CHANGE_ME","auth":"Y2ktYm90OkRFTU9fT05MWV9DSEFOR0VfTUU="}}'

@@ -1,0 +1,10 @@
+# DELIBERATELY INVALID: a TLS Secret requires both tls.crt and tls.key.
+# This placeholder is not a real certificate.
+apiVersion: v1
+kind: Secret
+metadata:
+  name: bookstore-tls-broken
+  namespace: secret-demo
+type: kubernetes.io/tls
+stringData:
+  tls.crt: "DELIBERATELY_INVALID_PLACEHOLDER_NOT_A_CERTIFICATE"

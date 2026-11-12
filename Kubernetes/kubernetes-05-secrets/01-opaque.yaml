@@ -1,0 +1,11 @@
+# Opaque: general-purpose Secret; Kubernetes does not validate application-specific keys.
+# These values are disposable demo credentials. Never use them in a real environment.
+apiVersion: v1
+kind: Secret
+metadata:
+  name: bookstore-db-secret
+  namespace: secret-demo
+type: Opaque
+stringData:
+  DB_USER: bookstore
+  DB_PASSWORD: DEMO_ONLY_CHANGE_ME

@@ -1,0 +1,11 @@
+# Basic Auth Secret using the conventional username and password keys.
+# The password is a disposable demo value, not a real credential.
+apiVersion: v1
+kind: Secret
+metadata:
+  name: bookstore-admin
+  namespace: secret-demo
+type: kubernetes.io/basic-auth
+stringData:
+  username: admin
+  password: DEMO_ONLY_CHANGE_ME

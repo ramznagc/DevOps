@@ -1,0 +1,9 @@
+# DELIBERATELY INVALID: "user" is used instead of the expected Basic Auth key names.
+apiVersion: v1
+kind: Secret
+metadata:
+  name: bookstore-admin-broken
+  namespace: secret-demo
+type: kubernetes.io/basic-auth
+stringData:
+  user: admin

@@ -15,4 +15,7 @@ Hands-on Kubernetes lessons and practical labs.
 
 - [kubernetes-04-volumes-and-persistent-storage](./kubernetes-04-volumes-and-persistent-storage/) — PersistentVolumes, PersistentVolumeClaims, emptyDir, StorageClasses, and dynamic provisioning.
 
+
+- [kubernetes-05-secrets](./kubernetes-05-secrets/) — Secret types, credentials, registry authentication, ServiceAccount tokens, and bootstrap tokens.
+
 More Kubernetes lessons will be added here as the learning journey continues.

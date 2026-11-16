@@ -1,0 +1,29 @@
+<% layout('layout') -%>
+<header>
+  <p class="eyebrow">MICROSERVICES DEMO</p>
+  <h1><%= title %></h1>
+  <p class="intro">Keep track of the things you need to do.</p>
+</header>
+
+<form class="new-todo" action="/create" method="post">
+  <label class="sr-only" for="content">New ToDo</label>
+  <input id="content" class="input" type="text" name="content" maxlength="500" placeholder="Add a task…" required>
+  <button type="submit">Add task</button>
+</form>
+
+<section class="list" aria-label="ToDo items">
+  <% if (todos.length === 0) { %>
+    <p class="empty">No tasks yet. Add your first task above.</p>
+  <% } %>
+  <% todos.forEach(function(todo) { %>
+    <article class="item">
+      <span class="task"><%= todo.content %></span>
+      <div class="actions">
+        <a href="/edit/<%= todo._id %>">Edit</a>
+        <form action="/destroy/<%= todo._id %>" method="post">
+          <button class="link danger" type="submit">Delete</button>
+        </form>
+      </div>
+    </article>
+  <% }); %>
+</section>

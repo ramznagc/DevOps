@@ -1,0 +1,21 @@
+{
+  "name": "kubernetes-todo-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Express and MongoDB ToDo application for a Kubernetes microservices lab",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "ejs": "3.1.10",
+    "ejs-mate": "4.0.0",
+    "express": "4.21.2",
+    "helmet": "8.0.0",
+    "mongoose": "8.9.5",
+    "morgan": "1.10.0"
+  }
+}

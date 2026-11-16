@@ -1,0 +1,13 @@
+<% layout('layout') -%>
+<header>
+  <p class="eyebrow">MICROSERVICES DEMO</p>
+  <h1>Edit task</h1>
+  <p class="intro">Update the task and save your changes.</p>
+</header>
+
+<form class="new-todo" action="/update/<%= todo._id %>" method="post">
+  <label class="sr-only" for="content">ToDo content</label>
+  <input id="content" class="input" type="text" name="content" maxlength="500" value="<%= todo.content %>" required>
+  <button type="submit">Save</button>
+  <a class="cancel" href="/">Cancel</a>
+</form>

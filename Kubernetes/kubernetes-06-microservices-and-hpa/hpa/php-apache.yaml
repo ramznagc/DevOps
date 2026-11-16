@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-apache
+  labels:
+    app.kubernetes.io/name: php-apache
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: php-apache
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: php-apache
+    spec:
+      containers:
+        - name: php-apache
+          image: registry.k8s.io/hpa-example
+          ports:
+            - name: http
+              containerPort: 80
+          resources:
+            requests:
+              cpu: 200m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 256Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: php-apache-service
+  labels:
+    app.kubernetes.io/name: php-apache
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: php-apache
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+      protocol: TCP

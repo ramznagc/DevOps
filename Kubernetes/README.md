@@ -10,5 +10,6 @@ Hands-on Kubernetes lessons and practical labs.
 - [kubernetes-04-volumes-and-persistent-storage](./kubernetes-04-volumes-and-persistent-storage/) — PersistentVolumes, PersistentVolumeClaims, emptyDir, StorageClasses, and dynamic provisioning.
 - [kubernetes-05-secrets](./kubernetes-05-secrets/) — Secret types, credentials, registry authentication, ServiceAccount tokens, and bootstrap tokens.
 - [kubernetes-06-microservices-and-hpa](./kubernetes-06-microservices-and-hpa/) — Deploy a Node.js/MongoDB ToDo application and practice Metrics Server and Horizontal Pod Autoscaling.
+- [kubernetes-07-eks-cluster-and-cluster-autoscaler](./kubernetes-07-eks-cluster-and-cluster-autoscaler/) — Create an Amazon EKS cluster, configure worker nodes, IRSA, and Cluster Autoscaler.
 
 More Kubernetes lessons will be added here as the learning journey continues.

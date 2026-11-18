@@ -24,9 +24,19 @@ Containerization fundamentals, Docker image operations, and multi-container appl
 📂 **[Explore Docker projects](./Docker/)**
 
 ### Kubernetes
-Hands-on Kubernetes cluster installation on AWS EC2 using kubeadm, containerd, Flannel, and an Nginx deployment.
+A progressive collection of hands-on Kubernetes labs. The learning path starts with cluster installation and core resources, then covers networking, persistent storage, application configuration, microservices, autoscaling, and Amazon EKS.
 
-📂 **[Explore Kubernetes 01](./Kubernetes/kubernetes-01-installation-ec2/)**
+📂 **[Explore all Kubernetes lessons](./Kubernetes/README.md)**
+
+Lessons include:
+- Cluster installation on AWS EC2 with kubeadm, containerd, and Flannel
+- Pods, ReplicaSets, Deployments, namespaces, rolling updates, and rollbacks
+- Services, ClusterIP, NodePort, DNS, endpoints, and service discovery
+- Volumes, PersistentVolumes, PersistentVolumeClaims, StorageClasses, and dynamic provisioning
+- Secret types, application credentials, registry authentication, ServiceAccount tokens, and bootstrap tokens
+- A Node.js/MongoDB ToDo application, Metrics Server, and Horizontal Pod Autoscaler
+- Amazon EKS cluster setup, worker nodes, IRSA, and Cluster Autoscaler
+- EKS Ingress path and host-based routing, rewrite-target annotations, and dynamic Amazon EBS provisioning
 
 ### Git & GitHub
 Version control fundamentals, repository organization, and tracking project changes with commits and pushes.
@@ -49,6 +59,8 @@ Version control fundamentals, repository organization, and tracking project chan
 - Terraform
 - Docker and Docker Compose
 - Kubernetes, kubeadm, containerd, and Flannel
+- AWS, Amazon EC2, Amazon EKS, IAM, and Amazon EBS
+- Kubernetes Ingress, CSI storage, Metrics Server, and HPA
 - Git and GitHub
 
 More tools and projects will be added as I continue learning.

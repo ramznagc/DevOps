@@ -12,5 +12,6 @@ Hands-on Kubernetes lessons and practical labs.
 - [kubernetes-06-microservices-and-hpa](./kubernetes-06-microservices-and-hpa/) — Deploy a Node.js/MongoDB ToDo application and practice Metrics Server and Horizontal Pod Autoscaling.
 - [kubernetes-07-eks-cluster-and-cluster-autoscaler](./kubernetes-07-eks-cluster-and-cluster-autoscaler/) — Create an Amazon EKS cluster, configure worker nodes, IRSA, and Cluster Autoscaler.
 - [kubernetes-08-eks-ingress-and-dynamic-volume-provisioning](./kubernetes-08-eks-ingress-and-dynamic-volume-provisioning/) — Create an EKS cluster, configure Ingress path/host routing, practice rewrite-target, and dynamically provision EBS volumes.
+- [kubernetes-09-pod-scheduling](./kubernetes-09-pod-scheduling/) — Control Pod placement with nodeName, nodeSelector, node affinity, Pod affinity, taints, and tolerations.
 
 More Kubernetes lessons will be added here as the learning journey continues.

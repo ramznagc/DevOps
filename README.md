@@ -24,7 +24,7 @@ Containerization fundamentals, Docker image operations, and multi-container appl
 📂 **[Explore Docker projects](./Docker/)**
 
 ### Kubernetes
-A progressive collection of hands-on Kubernetes labs. The learning path starts with cluster installation and core resources, then covers networking, persistent storage, application configuration, microservices, autoscaling, and Amazon EKS.
+A progressive collection of hands-on Kubernetes labs. The learning path starts with cluster installation and core resources, then covers networking, persistent storage, application configuration, microservices, autoscaling, Amazon EKS, and advanced pod scheduling.
 
 📂 **[Explore all Kubernetes lessons](./Kubernetes/README.md)**
 
@@ -37,6 +37,7 @@ Lessons include:
 - A Node.js/MongoDB ToDo application, Metrics Server, and Horizontal Pod Autoscaler
 - Amazon EKS cluster setup, worker nodes, IRSA, and Cluster Autoscaler
 - EKS Ingress path and host-based routing, rewrite-target annotations, and dynamic Amazon EBS provisioning
+- Pod scheduling with nodeName, nodeSelector, node affinity, Pod affinity, taints, and tolerations
 
 ### Git & GitHub
 Version control fundamentals, repository organization, and tracking project changes with commits and pushes.
@@ -60,7 +61,7 @@ Version control fundamentals, repository organization, and tracking project chan
 - Docker and Docker Compose
 - Kubernetes, kubeadm, containerd, and Flannel
 - AWS, Amazon EC2, Amazon EKS, IAM, and Amazon EBS
-- Kubernetes Ingress, CSI storage, Metrics Server, and HPA
+- Kubernetes Ingress, CSI storage, Metrics Server, HPA, and scheduling controls
 - Git and GitHub
 
 More tools and projects will be added as I continue learning.

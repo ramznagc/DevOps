@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-affinity-preferred
+  labels:
+    app: nginx-affinity-preferred
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: nginx-affinity-preferred
+  template:
+    metadata:
+      labels:
+        app: nginx-affinity-preferred
+    spec:
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 10
+              preference:
+                matchExpressions:
+                  - key: size
+                    operator: In
+                    values:
+                      - large
+                      - medium
+      containers:
+        - name: nginx
+          image: nginx:1.27
+          ports:
+            - containerPort: 80

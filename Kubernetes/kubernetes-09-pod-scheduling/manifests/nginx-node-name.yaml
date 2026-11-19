@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-node-name
+  labels:
+    app: nginx-node-name
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: nginx-node-name
+  template:
+    metadata:
+      labels:
+        app: nginx-node-name
+    spec:
+      nodeName: kube-master
+      containers:
+        - name: nginx
+          image: nginx:1.27
+          ports:
+            - containerPort: 80

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: scheduling-db
+  labels:
+    tier: db
+spec:
+  containers:
+    - name: database
+      image: nginx:1.27
+      ports:
+        - containerPort: 80

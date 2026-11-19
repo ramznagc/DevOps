@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shop
+  labels:
+    app: shop
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: shop
+  template:
+    metadata:
+      labels:
+        app: shop
+    spec:
+      affinity:
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchLabels:
+                  tier: db
+              topologyKey: kubernetes.io/hostname
+      containers:
+        - name: shop
+          image: nginx:1.27
+          ports:
+            - containerPort: 80

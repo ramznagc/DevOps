@@ -40,6 +40,8 @@ Lessons include:
 - Pod scheduling with nodeName, nodeSelector, node affinity, Pod affinity, taints, and tolerations
 - Container health checks with liveness, readiness, and startup probes using HTTP, TCP, and exec
 
+Kubernetes health probes demonstrate three distinct operational decisions: liveness restarts an unhealthy container, readiness controls whether a Pod receives Service traffic, and startup protects applications during initialization. See the [Kubernetes lesson index](./Kubernetes/README.md) for the complete hands-on sequence.
+
 ### Git & GitHub
 Version control fundamentals, repository organization, and tracking project changes with commits and pushes.
 

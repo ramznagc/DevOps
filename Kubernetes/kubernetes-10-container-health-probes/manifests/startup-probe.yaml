@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: startup-probe
+  labels:
+    app: startup-probe
+spec:
+  containers:
+    - name: startup
+      image: clarusway/startupprobe
+      ports:
+        - name: http
+          containerPort: 80
+      startupProbe:
+        httpGet:
+          path: /healthz
+          port: http
+        failureThreshold: 5
+        periodSeconds: 15
+      livenessProbe:
+        httpGet:
+          path: /healthz
+          port: http
+        initialDelaySeconds: 3
+        periodSeconds: 3

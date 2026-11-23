@@ -2,11 +2,12 @@
 
 Welcome to my DevOps Learning Portfolio! 🚀
 
-This repository documents my learning journey, hands-on labs, and practical exercises in DevOps technologies and tools.
+This repository documents my learning journey, hands-on labs, and practical exercises across DevOps technologies and tools.
 
 ## 📚 Topics
 
 ### Terraform
+
 Infrastructure as Code (IaC) with Terraform, including installation, configuration, variables, data sources, state management, modules, and workspaces.
 
 📂 **[Explore Terraform](./Terraform/README.md)**
@@ -19,12 +20,14 @@ Topics covered:
 - Publishing Terraform modules and using workspaces
 
 ### Docker
+
 Containerization fundamentals, Docker image operations, and multi-container application setup with Docker Compose.
 
 📂 **[Explore Docker projects](./Docker/)**
 
 ### Kubernetes
-A progressive collection of hands-on Kubernetes labs. The learning path starts with cluster installation and core resources, then covers networking, persistent storage, application configuration, microservices, autoscaling, Amazon EKS, and advanced pod scheduling.
+
+A progressive collection of hands-on Kubernetes labs. The learning path starts with cluster installation and core resources, then covers networking, persistent storage, application configuration, microservices, autoscaling, Amazon EKS, and advanced scheduling and health checks.
 
 📂 **[Explore all Kubernetes lessons](./Kubernetes/README.md)**
 
@@ -40,9 +43,33 @@ Lessons include:
 - Pod scheduling with nodeName, nodeSelector, node affinity, Pod affinity, taints, and tolerations
 - Container health checks with liveness, readiness, and startup probes using HTTP, TCP, and exec
 
-Kubernetes health probes demonstrate three distinct operational decisions: liveness restarts an unhealthy container, readiness controls whether a Pod receives Service traffic, and startup protects applications during initialization. See the [Kubernetes lesson index](./Kubernetes/README.md) for the complete hands-on sequence.
+### Helm
+
+Package and manage Kubernetes applications with Helm. The learning material covers charts, repositories, releases, templates, values, versioning, and chart distribution.
+
+📂 **[Explore Helm fundamentals](./Helm/README.md)**
+
+Topics covered:
+- Helm installation and chart discovery with Artifact Hub
+- Chart creation, values files, template objects, and template functions
+- Release installation, inspection, upgrades, history, and rollback
+- Packaging charts and publishing a classic chart repository with static GitHub hosting
+
+### Helm Chart Repository — ChartMuseum
+
+A separate hands-on guide to hosting a classic Helm chart repository with ChartMuseum.
+
+📂 **[Explore ChartMuseum](./Helm-Chart-Museum/README.md)**
+
+Topics covered:
+- Running ChartMuseum with local filesystem storage
+- Adding a ChartMuseum endpoint as a Helm repository
+- Uploading chart archives through the ChartMuseum API
+- Publishing chart versions with the helm-push plugin
+- Installing, upgrading, and rolling back releases from the repository
 
 ### Git & GitHub
+
 Version control fundamentals, repository organization, and tracking project changes with commits and pushes.
 
 ## 🧭 Learning Approach
@@ -65,6 +92,7 @@ Version control fundamentals, repository organization, and tracking project chan
 - Kubernetes, kubeadm, containerd, and Flannel
 - AWS, Amazon EC2, Amazon EKS, IAM, and Amazon EBS
 - Kubernetes Ingress, CSI storage, Metrics Server, HPA, scheduling controls, and container health probes
+- Helm, Helm charts, ChartMuseum, and chart repositories
 - Git and GitHub
 
 More tools and projects will be added as I continue learning.

@@ -36,7 +36,7 @@ You need:
 - Helm 3 or a compatible Helm client.
 - A Linux host or VM on which you can run ChartMuseum.
 - Network access from your Helm client to the ChartMuseum endpoint.
-- A chart directory, such as the `clarus-chart` created in the [Helm fundamentals guide](../Helm/README.md).
+- A chart directory, such as the `clarus-chart` created in the [Helm fundamentals guide](../README.md).
 
 The original exercise uses an Ubuntu 22.04 cluster with one control-plane node and one worker node, provisioned using the CloudFormation template from the Kubernetes basic-operations lesson. You can also practice Kubernetes commands in [Killercoda](https://killercoda.com/playgrounds).
 
@@ -304,7 +304,7 @@ rm -rf ./chartstorage
 - [ChartMuseum Helm push plugin](https://github.com/chartmuseum/helm-push)
 - [Helm chart repositories](https://helm.sh/docs/topics/chart_repository/)
 - [Helm OCI registries](https://helm.sh/docs/topics/registries/)
-- [Helm fundamentals lab](../Helm/README.md)
+- [Helm fundamentals lab](../README.md)
 
 ---
 

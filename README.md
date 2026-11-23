@@ -55,11 +55,11 @@ Topics covered:
 - Release installation, inspection, upgrades, history, and rollback
 - Packaging charts and publishing a classic chart repository with static GitHub hosting
 
-### Helm Chart Repository — ChartMuseum
+#### Helm Chart Repository — ChartMuseum
 
-A separate hands-on guide to hosting a classic Helm chart repository with ChartMuseum.
+A companion hands-on guide to hosting a classic Helm chart repository with ChartMuseum.
 
-📂 **[Explore ChartMuseum](./Helm-Chart-Museum/README.md)**
+📂 **[Explore ChartMuseum](./Helm/Helm-Chart-Museum/README.md)**
 
 Topics covered:
 - Running ChartMuseum with local filesystem storage

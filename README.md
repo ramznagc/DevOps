@@ -25,6 +25,19 @@ Containerization fundamentals, Docker image operations, and multi-container appl
 
 📂 **[Explore Docker projects](./Docker/)**
 
+### Amazon ECR
+
+Hands-on practice with Amazon Elastic Container Registry: provision a Docker host using Terraform, create private repositories, authenticate Docker with an EC2 IAM role, and build, push, pull, tag and delete container images.
+
+📂 **[Explore the Amazon ECR hands-on](./ECR/README.md)**
+
+Topics covered:
+- EC2 Docker host provisioning with Terraform
+- ECR registry and repository configuration through the AWS Console and CLI
+- Docker image build, tag, push and pull workflows
+- Mutable and immutable image tags
+- ECR lifecycle policies and repository cleanup
+
 ### Kubernetes
 
 A progressive collection of hands-on Kubernetes labs. The learning path starts with cluster installation and core resources, then covers networking, persistent storage, application configuration, microservices, autoscaling, Amazon EKS, and advanced scheduling and health checks.
@@ -90,7 +103,7 @@ Version control fundamentals, repository organization, and tracking project chan
 - Terraform
 - Docker and Docker Compose
 - Kubernetes, kubeadm, containerd, and Flannel
-- AWS, Amazon EC2, Amazon EKS, IAM, and Amazon EBS
+- AWS, Amazon EC2, Amazon EKS, IAM, Amazon EBS, and Amazon ECR
 - Kubernetes Ingress, CSI storage, Metrics Server, HPA, scheduling controls, and container health probes
 - Helm, Helm charts, ChartMuseum, and chart repositories
 - Git and GitHub

@@ -38,6 +38,20 @@ Topics covered:
 - Mutable and immutable image tags
 - ECR lifecycle policies and repository cleanup
 
+### Amazon ECS
+
+Deploy and operate containerized applications on Amazon Elastic Container Service (ECS) with AWS Fargate. This hands-on includes a small Flask ToDo application, Docker image publishing to ECR, task definitions, services, networking, health checks, and AWS CLI deployment.
+
+📂 **[Explore the Amazon ECS hands-on](./ECS/README.md)**
+
+Topics covered:
+- Containerize and run a small ToDo web application locally
+- Publish versioned images to Amazon ECR
+- ECS clusters, task definitions, tasks, and services
+- Fargate networking, IAM task execution roles, and security groups
+- Deploy and update a service using the AWS CLI
+- Health checks, logs, scaling, and cleanup
+
 ### Kubernetes
 
 A progressive collection of hands-on Kubernetes labs. The learning path starts with cluster installation and core resources, then covers networking, persistent storage, application configuration, microservices, autoscaling, Amazon EKS, and advanced scheduling and health checks.

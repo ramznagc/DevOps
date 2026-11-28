@@ -168,6 +168,7 @@ export LOG_GROUP="/ecs/$APP_NAME"
 aws logs create-log-group --log-group-name "$LOG_GROUP" 2>/dev/null || true
 
 sed \
+  -e "s|TASK_FAMILY|$TASK_FAMILY|g" \
   -e "s|ACCOUNT_ID|$ACCOUNT_ID|g" \
   -e "s|AWS_REGION|$AWS_REGION|g" \
   -e "s|ECR_REPOSITORY|$ECR_REPOSITORY|g" \

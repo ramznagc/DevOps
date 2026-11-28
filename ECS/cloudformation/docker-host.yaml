@@ -1,0 +1,73 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Optional Amazon Linux 2023 Docker host for the ECS/ECR learning lab.
+
+Parameters:
+  AllowedSshCidr:
+    Type: String
+    Description: Your public IPv4 address in CIDR notation, for example 203.0.113.10/32.
+    AllowedPattern: "^([0-9]{1,3}\\.){3}[0-9]{1,3}/([0-9]|[1-2][0-9]|3[0-2])$"
+  InstanceType:
+    Type: String
+    Default: t3.micro
+    AllowedValues: [t3.micro, t3.small, t3.medium]
+
+Resources:
+  DockerHostRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal: { Service: ec2.amazonaws.com }
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryPowerUser
+
+  DockerHostProfile:
+    Type: AWS::IAM::InstanceProfile
+    Properties:
+      Roles: [!Ref DockerHostRole]
+
+  DockerHostSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: SSH restricted to the operator and HTTP demo access
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: !Ref AllowedSshCidr
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: !Ref AllowedSshCidr
+
+  DockerHost:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: "{{resolve:ssm:/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-x86_64}}"
+      InstanceType: !Ref InstanceType
+      IamInstanceProfile: !Ref DockerHostProfile
+      SecurityGroupIds: [!GetAtt DockerHostSecurityGroup.GroupId]
+      Tags:
+        - Key: Name
+          Value: ecs-ecr-docker-host
+      UserData:
+        Fn::Base64: !Sub |
+          #!/bin/bash
+          dnf update -y
+          dnf install -y docker awscli
+          systemctl enable --now docker
+          usermod -aG docker ec2-user
+          # Reconnect after provisioning for the docker group membership to apply.
+
+Outputs:
+  InstanceId:
+    Value: !Ref DockerHost
+  PublicIp:
+    Value: !GetAtt DockerHost.PublicIp
+  SecurityGroupId:
+    Value: !GetAtt DockerHostSecurityGroup.GroupId
+  Note:
+    Value: "SSH is restricted to AllowedSshCidr. HTTP port 80 is open only to the same CIDR; the sample app listens on 8080, so adjust the rule or use a local Docker host."
